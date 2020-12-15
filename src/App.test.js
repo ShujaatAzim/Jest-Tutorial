@@ -9,9 +9,3 @@ it("contains the proper welcome message", () => {
   const welcome = <h1>Welcome to my test!</h1>
   expect(wrapper.contains(welcome)).toEqual(true)
 })
-
-it("increases the count by 1 after clicking Add", () => {
-  const wrapper = shallow(<Counter />)
-  wrapper.find("#add").simulate('click')
-  expect(wrapper.state().count).toEqual(1)
-})
