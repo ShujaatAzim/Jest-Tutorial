@@ -1,14 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const Counter = () => {
+class Counter extends React.Component {
 
-  const [count, setCount] = useState(0)
+  state = {
+    count: 0
+  }
 
-  return (
-    <div>
-      Count: { count }
-    </div>
-  )
+  render () {
+    return (
+      <div>
+        Count: { this.state.count }
+        <button id="add" onClick={() => this.setState({count: this.state.count + 1})}>Add</button>
+      </div>
+    )
+  }
 }
 
 export default Counter
