@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import App from './App'
 import Counter from './Counter'
 import './setupTests'
@@ -11,13 +11,13 @@ it("should render welcome message and the count component", () => {
 })
 
 it("should render the counter component", () => {
-  const wrapper = shallow(<App />)
+  const wrapper = mount(<App />)
   const counter = wrapper.find(<Counter />)
-  expect(counter.exists()).toBe(true)
+  expect(counter.exists()).toEqual(true)
 })
 
 it("contains the proper welcome message", () => {
   const wrapper = shallow(<App />)
-  const welcome = <h1>Welcome to my test!</h1>
-  expect(wrapper.contains(welcome)).toEqual(true)
+  const welcome = wrapper.find('h1')
+  expect(welcome.text()).toEqual("Welcome to my test!")
 })
