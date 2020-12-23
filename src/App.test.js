@@ -21,3 +21,5 @@ it("contains the proper welcome message", () => {
   const welcome = wrapper.find('h1')
   expect(welcome.text()).toEqual("Welcome to my test!")
 })
+
+it("")
